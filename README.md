@@ -3,7 +3,7 @@
 sudo su edxapp -s /bin/bash
 cd ~
 source edxapp_env
-pip install -e git+https://github.com/lovehhf/polyv_xblock#egg=polyv_xblock
+pip install -e git+https://github.com/lovehhf/polyvXBlock#egg=polyvXBlok
 exit
 sudo /edx/bin/supervisorctl restart edxapp:
 </pre>
