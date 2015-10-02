@@ -1,5 +1,4 @@
 /* Javascript for PolyvXBlock. */
-/* Javascript for PolyvXBlock. */
 function PolyvXBlock(runtime, element) {
 
     function updateCount(result) {
@@ -21,3 +20,5 @@ function PolyvXBlock(runtime, element) {
         /* Here's where you'd do things on page load. */
     });
 }
+
+
