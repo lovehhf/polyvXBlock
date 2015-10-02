@@ -22,7 +22,7 @@ def package_data(pkg, roots):
 
 setup(
     name='polyv-xblock',
-    version='0.1',
+    version='1.1',
     description='polyv XBlock',   # TODO: write a better description.
     packages=[
         'polyv',
