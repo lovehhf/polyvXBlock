@@ -12,6 +12,3 @@ sudo /edx/bin/supervisorctl restart edxapp:
 
 #在studio中设置(课程级别的设置)
 进入到"Settings" ⇒ "Advanced Settings",将"youku"添加到Advanced Module List
-
-#使用方法（结合优酷）
-参考:[在edx中使用优酷视频服务](http://wwj718.github.io/edx-use-youku.html)
