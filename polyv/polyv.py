@@ -40,7 +40,7 @@ class PolyvXBlock(XBlock):
     scope=Scope.content, #Scope.content和Scope.settings不同在于，(可见性)本课多处可用
     help="The  client_id for your video.")
 
-    file_id = String(display_name="video vid",
+    video_id = String(display_name="video vid",
     default="polyv",
     scope=Scope.content, #Scope.content和Scope.settings不同在于，(可见性)本课多处可用
     help="The vid for your video.")
@@ -111,7 +111,7 @@ class PolyvXBlock(XBlock):
         context = {
             'display_name': self.display_name,
             'app_id' : self.app_id,
-            'file_id': self.file_id,
+            'video_id': self.video_id,
             'width': self.width,
             'height': self.height
         }
@@ -131,7 +131,7 @@ class PolyvXBlock(XBlock):
         """
         self.display_name = data['display_name']
         self.app_id = data['app_id']
-        self.file_id = data['file_id']
+        self.video_id = data['video_id']
         self.width = data['width']
         self.height = data['height']
 
@@ -142,7 +142,7 @@ class PolyvXBlock(XBlock):
     @XBlock.json_handler
     def get_params(self, data, suffix=''):
         '''called when polyv init'''
-        return {"file_id":self.file_id,
+        return {"video_id":self.video_id,
                 "app_id":self.app_id,
                 "width":self.width,
                 "height":self.height
