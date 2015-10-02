@@ -35,5 +35,5 @@ setup(
             'polyv = polyv:PolyvXBlock',
         ]
     },
-    package_data=package_data("polyv", ["static", "public"]),
+    package_data=package_data("polyv", "static"),
 )
