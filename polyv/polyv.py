@@ -87,14 +87,15 @@ class PolyvXBlock(XBlock):
         """
         The primary view of the PolyvXBlock, shown to students
         when viewing courses.
-        """
-       context = {
+        context = {
             'display_name': self.display_name,
             'app_id' : self.app_id,
             'video_id': self.video_id,
             'width': self.width,
             'height': self.height
         }
+        
+        """
         html = self.render_template('static/html/polyv_view.html', context)
         frag = Fragment(html)
         #frag.add_javascript(self.load_resource('static/js/h5connect.js')) #内有中文，使用插入外部url
