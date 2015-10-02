@@ -155,5 +155,5 @@ class PolyvXBlock(XBlock):
     def workbench_scenarios():
         """A canned scenario for display in the workbench."""
         return [
-            ("polyv demo","<polyv />"),
+            ("polyv demo","<polyv />")
         ]
