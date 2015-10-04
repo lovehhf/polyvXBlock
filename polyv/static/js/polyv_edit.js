@@ -5,16 +5,27 @@ function polyxXBlockInitStudio(runtime, element) {
         runtime.notify('cancel', {});
     });
 
-    $(element).find('.save-button').bind('click', function() {
-    var handlerUrl = runtime.handlerUrl(element, 'studio_submit');
-    var data = {
-        display_name: $(element).find('input[name=display_name]').val(),
-        video_id: $(element).find('input[name=video_id]').val(),
-        width: $(element).find('input[name=width]').val(),
-        height: $(element).find('input[name=height]').val()
-    };
-    $.post(handlerUrl, JSON.stringify(data)).done(function(response) {
-      window.location.reload(false);
+    $(element).find('.action-save').bind('click', function() {
+        var data = {
+            'display_name': $('#polyv_edit_display_name').val(),
+            'file_id': $('#polyv_edit_file_id').val(),
+            'app_id': $('#polyv_edit_app_id').val(),
+            'width': $('#polyv_edit_width').val(),
+            'height': $('#polyv_edit_height').val(),
+        };
+
+        runtime.notify('save', {state: 'start'});
+
+        var handlerUrl = runtime.handlerUrl(element, 'save_polyv');
+        $.post(handlerUrl, JSON.stringify(data)).done(function(response) {
+            if (response.result === 'success') {
+                runtime.notify('save', {state: 'end'});
+                // Reload the whole page :
+                // window.location.reload(false);
+            } else {
+                runtime.notify('error', {msg: response.message})
+            }
+        });
     });
 
 }

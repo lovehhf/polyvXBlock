@@ -20,9 +20,19 @@ function get_params(runtime, element){
             success: function(result) {
                 console.log(result);
                 video_id = result.data.data;
-                //return data
-                //polyv_play(result.data);
+                app_id = result.app_id;
+                width = result.width;
+                height = result.height;
+                show_player(file_id,app_id,width,height);
             }
         });
 
+}
+
+function show_player(file_id,app_id,width,height){
+     player = new YKU.Player('youkuplayer',{
+         styleid: '0',
+            client_id: app_id,
+            vid: file_id
+     });
 }
