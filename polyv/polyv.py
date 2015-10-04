@@ -41,7 +41,7 @@ class PolyvXBlock(XBlock):
     help="The  client_id for your video.")
 
     video_id = String(display_name="video vid",
-    default="cdc0b0ba5882d19b20f8380b2125af51_c",
+    default="0432ade4f6cea30a891e55add8bdd997_0",
     scope=Scope.content, #Scope.content和Scope.settings不同在于，(可见性)本课多处可用
     help="The vid for your video.")
 
